@@ -3,7 +3,7 @@ services:
     name: ecocart
     env: php
     buildCommand: ""
-    startCommand: php -S 0.0.0.0:$PORT -t .
+    startCommand: php -S 0.0.0.0:$PORT router.php
     envVars:
       - key: DB_HOST
         fromDatabase:
