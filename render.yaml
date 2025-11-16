@@ -1,0 +1,33 @@
+services:
+  - type: web
+    name: ecocart
+    env: php
+    buildCommand: ""
+    startCommand: php -S 0.0.0.0:$PORT -t .
+    envVars:
+      - key: DB_HOST
+        fromDatabase:
+          name: ecocart-db
+          property: host
+      - key: DB_USER
+        fromDatabase:
+          name: ecocart-db
+          property: user
+      - key: DB_PASSWORD
+        fromDatabase:
+          name: ecocart-db
+          property: password
+      - key: DB_NAME
+        fromDatabase:
+          name: ecocart-db
+          property: database
+      - key: GEMINI_API_KEY
+        sync: false
+
+databases:
+  - name: ecocart-db
+    databaseName: ecocart
+    user: ecocart_user
+    plan: free
+    databaseType: mysql
+
