@@ -1,0 +1,43 @@
+=== DEPLOY TO FREE LIVE URL - COMMANDS ===
+
+STEP 1: Push to GitHub
+-----------------------
+1. Create repo at github.com (name: ecocart, Public)
+
+2. Run these commands:
+   git remote add origin https://github.com/YOUR_USERNAME/ecocart.git
+   git branch -M main
+   git push -u origin main
+
+   (Replace YOUR_USERNAME with your GitHub username)
+
+
+STEP 2: Deploy on Render
+-------------------------
+1. Go to render.com → Sign up (FREE)
+
+2. Create Web Service:
+   - Connect GitHub repo: ecocart
+   - Environment: PHP
+   - Start Command: php -S 0.0.0.0:$PORT router.php
+   - Plan: Free
+
+3. Create Database:
+   - PostgreSQL (Free)
+   - Name: ecocart-db
+
+4. Set Environment Variable:
+   - GEMINI_API_KEY = your-api-key
+
+5. Initialize Database:
+   - Run db.sql in database console
+
+6. Deploy!
+
+
+STEP 3: Get Your LIVE URL
+--------------------------
+After deployment: https://your-app.onrender.com
+
+✅ Your website is now LIVE and FREE!
+
